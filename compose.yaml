@@ -1,0 +1,13 @@
+services:
+  lualatex-worker:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/workspace
+    working_dir: /workspace
+    user: "${UID}:${GID}"
+    tty: true
+    stdin_open: true
+    command: /bin/bash
+    image: lualatex-worker:latest

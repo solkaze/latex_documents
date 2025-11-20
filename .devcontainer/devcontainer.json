@@ -1,0 +1,13 @@
+{
+    "name": "Latex-Doc",
+    "dockerComposeFile": "../compose.yaml",
+    "service": "lualatex-worker",
+    "workspaceFolder": "/workspace",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "james-yu.latex-workshop"
+            ]
+        }
+    }
+}
