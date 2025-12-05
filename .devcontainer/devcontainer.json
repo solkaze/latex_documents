@@ -3,11 +3,38 @@
     "dockerComposeFile": "../compose.yaml",
     "service": "lualatex-worker",
     "workspaceFolder": "/workspace",
+    "runServices": [
+        "lualatex-worker"
+    ],
+    "updateRemoteUserUID": false,
     "customizations": {
         "vscode": {
             "extensions": [
                 "james-yu.latex-workshop"
-            ]
+            ],
+            "settings": {
+                "terminal.integrated.defaultProfile.linux": "zsh",
+                "terminal.integrated.profiles.linux": {
+                    "bash": {
+                        "path": "bash",
+                        "icon": "terminal-bash"
+                    },
+                    "zsh": {
+                        "path": "/usr/bin/zsh"
+                    },
+                    "fish": {
+                        "path": "fish"
+                    },
+                    "tmux": {
+                        "path": "tmux",
+                        "icon": "terminal-tmux"
+                    },
+                    "pwsh": {
+                        "path": "pwsh",
+                        "icon": "terminal-powershell"
+                    }
+                }
+            }
         }
     }
 }

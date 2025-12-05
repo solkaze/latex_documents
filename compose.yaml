@@ -6,8 +6,9 @@ services:
     volumes:
       - ./:/workspace
     working_dir: /workspace
-    user: "${UID}:${GID}"
     tty: true
     stdin_open: true
-    command: /bin/bash
+    environment:
+      TERM: xterm-256color
+    command: /usr/bin/zsh
     image: lualatex-worker:latest
