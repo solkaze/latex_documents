@@ -9,6 +9,8 @@ ENV LANG=ja_JP.UTF-8
 ENV LANGUAGE=ja_JP:ja
 ENV LC_ALL=ja_JP.UTF-8
 
+ARG NVIM_VERSION=v0.11.5
+
 RUN apt-get update && apt-get install -y --no-install-recommends \
     locales \
     && locale-gen ja_JP.UTF-8 \
@@ -29,6 +31,8 @@ RUN apt-get update && apt-get install -y \
     zip \
     unzip \
     fd-find \
+    bat \
+    fzf \
     ripgrep \
     # latexmk はperl依存なのでこちらでもOKですが、下のTeXと一緒でも構いません
     latexmk \
@@ -48,6 +52,15 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     biber \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
+
+RUN ln -sf /usr/bin/fdfind /usr/local/bin/fd && \
+    ln -sf /usr/bin/batcat /usr/local/bin/bat
+# Neovim のインストール
+RUN wget https://github.com/neovim/neovim/releases/download/${NVIM_VERSION}/nvim-linux-x86_64.tar.gz \
+    && tar xzf nvim-linux-x86_64.tar.gz \
+    && mv nvim-linux-x86_64 /usr/local \
+    && ln -sf /usr/local/nvim-linux-x86_64/bin/nvim /usr/local/bin/nvim \
+    && rm nvim-linux-x86_64.tar.gz
 
 RUN set -eux; \
     usermod -aG sudo ubuntu; \
