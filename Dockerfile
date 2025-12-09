@@ -50,6 +50,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     texlive-extra-utils \
     texlive-bibtex-extra \
     biber \
+    fonts-noto-core \
+    fonts-noto-cjk \
+    fonts-noto-mono \
+    fonts-ipaexfont \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
