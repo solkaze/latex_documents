@@ -6,6 +6,7 @@
     "runServices": [
         "lualatex-worker"
     ],
+    "remoteUser": "ubuntu",
     "updateRemoteUserUID": false,
     "customizations": {
         "vscode": {
@@ -16,7 +17,7 @@
                 "terminal.integrated.defaultProfile.linux": "zsh",
                 "terminal.integrated.profiles.linux": {
                     "bash": {
-                        "path": "bash",
+                        "path": "/bin/bash",
                         "icon": "terminal-bash"
                     },
                     "zsh": {

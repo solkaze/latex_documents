@@ -188,4 +188,5 @@
   // ---------- LaTeX Workshop ----------
   // 使用パッケージのコマンドや環境の補完を有効にする
   "latex-workshop.intellisense.package.enabled": true,
+  "latex-workshop.latex.outDir": "out"
 }

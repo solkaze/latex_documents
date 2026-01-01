@@ -19,7 +19,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
 # TeXインストール
-RUN apt-get update && apt-get install -y \
+RUN apt-get update && apt-get install -y --no-install-recommends \
     make \
     perl \
     wget \
@@ -34,6 +34,7 @@ RUN apt-get update && apt-get install -y \
     bat \
     fzf \
     ripgrep \
+    openssh-client \
     # latexmk はperl依存なのでこちらでもOKですが、下のTeXと一緒でも構いません
     latexmk \
     && apt-get clean \
@@ -110,12 +111,6 @@ RUN sed -i 's/^plugins=.*/plugins=(\
     zsh-syntax-highlighting \
     history-substring-search \
     zsh-completions \
-    command-not-found \
-    gitignore \
-    aliases \
-    docker \
-    copyfile \
-    copypath \
 )/' ~/.zshrc
 
 CMD ["/usr/bin/zsh"]
