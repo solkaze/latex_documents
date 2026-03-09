@@ -1,6 +1,6 @@
 {
     "name": "Latex-Doc",
-    "dockerComposeFile": "../compose.yaml",
+    "dockerComposeFile": "compose.yaml",
     "service": "lualatex-worker",
     "workspaceFolder": "/workspace",
     "runServices": [
